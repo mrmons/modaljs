@@ -1,0 +1,23 @@
+{
+  "name": "modaljs",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mrmons/modaljs",
+  "authors": [
+    "vincentsoo"
+  ],
+  "keywords": [
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "modernizr": "~2.8.3"
+  }
+}
