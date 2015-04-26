@@ -1,20 +1,17 @@
 (function ($) {
 
+	var modalWrapper = $(".modaljs-wrapper");
 	var modalContent = $(".modaljs-content");
-	var modalContentShow = modalContent.show();
+	//var modalContentShow = modalContent.show();
 
 	var modalBg = $(".modaljs-bg");
 
-
-
-
-
 	$.fn.modaljs = function() {
 
-		modalContent.hide();
+		modalWrapper.hide();
 
         this.on('click',function(e){
-        	e.preventDefault();
+        	//e.preventDefault();
 
         	var curX = e.pageX;
         	var curY = e.pageY;
@@ -24,10 +21,10 @@
         		"top":curY - ($(this).offset().top)/5
         	});
 
-        	modalContent.show();
-        	//modalContentShow.velocity('fadeIn');
+        	modalWrapper.show();
 
         	rippleIt();
+
         	return this;
         });
 
@@ -37,23 +34,36 @@
         });
 
      	function rippleIt(){
+     		//Using css3 animation
+     		//modalContent.toggleClass('open close').find(modalBg).toggleClass("openjs closejs");
+     		modalContent.velocity("fadeIn");
+
      		modalBg.velocity({
-     			//width: $( window ).height(),
-     			//height:$( window ).height()
+	 		 	scaleX: 100,
+	 		 	scaleY: 100,
+	 		 	opacity: 1,
+	 		 	borderRadius: 0,
+	 		// 	//width: $( window ).height(),
+	 		// 	//height:$( window ).height()
      		});
      		//$(this).append("<div class='hello'></div");
      		//modalContentShow.velocity('fadeIn');
      	}
 
      	function fadeIt(){
-     		modalContentShow.velocity('fadeIn');
+     		//modalContentShow.velocity('fadeIn');
      	}
 
 
         function closeModal(){
-        	modalContent.velocity('fadeOut',function(){
-        		$(this).hide();
-        	});
+        	 modalBg.velocity("reverse");
+        	 modalContent.velocity("fadeOut",function(){
+        	 	modalWrapper.hide();
+        	 });
+
+        	// modalContent.velocity('fadeOut',function(){
+        	// 	$(this).hide();
+        	// });
         }//closeModal
 
     };
