@@ -5,6 +5,7 @@
 	<title>Modal Window</title>
 
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 
@@ -12,19 +13,35 @@
 
 	<main class="container">
 
-		<section class="jumbotron">
+		<!-- modal content START -->
+		<section class="modaljs-content">
+
+			<div class="modaljs-bg"></div>
+
+			<button class="btn btn-danger pull-right modaljs-close">Close</button>
+		
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente hic soluta possimus voluptatem, consequatur quo quidem eum mollitia, quia quam, tempora ea explicabo nisi itaque a blanditiis amet minus delectus.
+			</p>
+		</section>
+		<!-- modal content END -->
+
+		<!-- content START -->
+		<section>
 			<h2>Modal Window</h2>
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quia deserunt nihil similique dolores voluptatum mollitia deleniti voluptatibus facere repudiandae, quidem, ut eveniet quae minus? Dicta tempore, consequuntur pariatur velit?</p>
-			 <p class="">
-			 	<a class="btn btn-primary btn-lg" data-type="mode-trigger" role="button">Modal Start</a>
-			 </p>
-		</section>	
+			 
+			 <button class="btn btn-primary btn-lg" data-type="modaljs-trigger" role="button">Modal Start</button>
+			 
+		</section>
+		<!-- content END -->	
 
 	</main>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/velocity.min.js"></script>
+	<script src="js/modaljs.js"></script>
 	<script src="js/script.js"></script>
 
 </body>

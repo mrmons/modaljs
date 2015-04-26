@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
+	$("[data-type='modaljs-trigger']").modaljs();
 
-	$("[data-type='mode-trigger']").on('click',function(){
-		alert("click");
-	});
-
-	
 });
