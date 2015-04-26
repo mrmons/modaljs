@@ -11,7 +11,7 @@
 		modalWrapper.hide();
 
         this.on('click',function(e){
-        	//e.preventDefault();
+        	e.preventDefault();
 
         	var curX = e.pageX;
         	var curY = e.pageY;
@@ -36,7 +36,7 @@
      	function rippleIt(){
      		//Using css3 animation
      		//modalContent.toggleClass('open close').find(modalBg).toggleClass("openjs closejs");
-     		
+
      		modalContent.velocity("fadeIn");
 
      		modalBg.velocity({
