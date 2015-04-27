@@ -2,8 +2,6 @@
 
 	var modalWrapper = $(".modaljs-wrapper");
 	var modalContent = $(".modaljs-content");
-	//var modalContentShow = modalContent.show();
-
 	var modalBg = $(".modaljs-bg");
 
 	$.fn.modaljs = function() {
@@ -26,16 +24,19 @@
         	rippleIt();
 
         	return this;
-        });
+        }); //When user click the trigger button
 
         $(".modaljs-close").on('click',function(e){
         	closeModal();
+
         	return this;
-        });
+        }); //When user close the modal window
 
      	function rippleIt(){
      		//Using css3 animation
      		//modalContent.toggleClass('open close').find(modalBg).toggleClass("openjs closejs");
+			
+			//modalWrapper.append("<div class='modaljs-bg'></div>").     	
 
      		modalContent.velocity("fadeIn");
 
@@ -44,16 +45,14 @@
 	 		 	scaleY: 100,
 	 		 	opacity: 1,
 	 		 	borderRadius: 0,
-	 		// 	//width: $( window ).height(),
-	 		// 	//height:$( window ).height()
      		});
-     		//$(this).append("<div class='hello'></div");
-     		//modalContentShow.velocity('fadeIn');
-     	}
+     	}//Ripple effect 
 
      	function fadeIt(){
+     		modalContent.velocity("fadeIn");
+     		modalBg.velocity("fadeIn");
      		//modalContentShow.velocity('fadeIn');
-     	}
+     	}//Fade effect 
 
 
         function closeModal(){
@@ -62,7 +61,7 @@
         	 modalContent.velocity("fadeOut",function(){
         	 	modalWrapper.hide();
         	 });
-        }//closeModal
+        }//close Modal
 
     };
 
